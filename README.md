@@ -10,8 +10,8 @@ A simple todo app with Reactjs
 
 ## Features
 
-**Add, Delete, Sort Todo** </br>
-**Completed Tasks Check**
+**---Add, Delete, Sort Todo** </br>
+**---Completed Tasks Check**
 
 ## Getting Started
 
