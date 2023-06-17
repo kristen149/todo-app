@@ -1,6 +1,6 @@
 export const AddToDo = (props) => {
   
-    const {todo, setTodo, addTodo, on, setToggle} = props;
+    const {todo, setTodo, addTodo, on} = props;
 
    
 

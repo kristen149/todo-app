@@ -1,5 +1,4 @@
 import img from "../img.png";
-
 import '../App.css';
 import _ from 'lodash';
 import DateTime from './DateTime';
@@ -17,6 +16,9 @@ const Home = () => {
     const [todolist, setTodolist] = useState(JSON.parse(localStorage.getItem('todolist')) || [])
     const [completedlist, setCompletedlist] = useState(JSON.parse(localStorage.getItem('completedlist')) || [])
     const [on, setToggle] = useState(false)
+    const [edit, setEdit] = useState(true)
+    const [editItemName, setEditItemName] = useState("")
+    // =======================================
     useEffect(() => {
         localStorage.setItem('todolist', JSON.stringify(todolist))
 
@@ -103,13 +105,13 @@ const Home = () => {
 
     }
 
-    // SHOW ONLY COMPLETED LIST, HIDE UNCOMPLETED LIST
+    // SHOW ONLY COMPLETED LIST, HIDE UNCOMPLETED LIST=========================================
     const [showCompletedlist, setShowCompletedlist] = useState(true)
     const toggleCompletedlist = () => {
         setShowCompletedlist(!showCompletedlist)
     }
 
-    // SORT TODOLIST ALPHABETICALLY
+    // SORT TODOLIST ALPHABETICALLY============================================================
     const sortListASC = (isASC) => {
         if (isASC) {
             const sortTodolist = [...todolist].sort((a, b) => a.name.localeCompare(b.name))
@@ -125,14 +127,38 @@ const Home = () => {
 
     }
 
-    // EDIT TODO
-    const editTodo = () => {
-        alert("Features comming soon!")
+    // EDIT TODO============================================================
+    const handleKeyPress = (id, e) => {
+        if (e.key==='enter') {
+            editTodo(id, editItemName)
+        }
+
+    }
+    const editTodo = (id, newName) => {
+        setEdit(!edit)
+        
+        const updatedToDoList = todolist.map((item) => {
+            if (item.id===id) {
+                return {...item, name:newName}
+            }
+            console.log(item)
+            return item
+        })
+        setTodolist(updatedToDoList)
+        setEditItemName('')
+        console.log(updatedToDoList)
+        
+
+
+    }
+    // INFO
+    const handleClickInfo = () => {
+        alert('Version 1.1, Kristen T')
     }
 
 
 
-    // RETURN TO HTML----------------------------------------------------------------------------------------------------
+    // RENDER VIEW----------------------------------------------------------------------------------------------------
     return (
 
         <div className="card">
@@ -142,11 +168,10 @@ const Home = () => {
 
             <div className="card__body">
                 <div className="filter-btn">
-                    <a id="one" href="#" onClick={toggleCompletedlist}><i className="fa fa-check-circle"></i></a>
-                    <a id="two" href="#" onClick={() => sortListASC(false)}><i className="fa fa-sort-alpha-down"></i></a>
-                    <a id="three" href="#" onClick={() => sortListASC(true)}><i className="fa fa-sort-alpha-up"></i></a>
-                    <a id="all" href="#" onClick= {editTodo}><i className="fas fa-edit"></i>
-                    </a>
+                    <a id="one"  onClick={toggleCompletedlist}><i className="fa fa-check-circle"></i></a>
+                    <a id="two"  onClick={() => sortListASC(false)}><i className="fa fa-sort-alpha-down"></i></a>
+                    <a id="three" onClick={() => sortListASC(true)}><i className="fa fa-sort-alpha-up"></i></a>
+                    <a id="all" onClick= {() => handleClickInfo()}><i class="fa-solid fa-circle-info"></i></a>
                     <span className="toggle-btn">
                         <i className="fa fa-filter"></i>
                         <i className="fa fa-times"></i>
@@ -198,6 +223,11 @@ const Home = () => {
                                     todolist={todolist}
                                     deleteTodo={deleteTodo}
                                     moveTodo={moveTodo}
+                                    edit = {edit}
+                                    editTodo={editTodo}
+                                    editItemName= {editItemName}
+                                    setEditItemName={setEditItemName}
+                                    handleKeyPress = {handleKeyPress}
 
                                 />
 
