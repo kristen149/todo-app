@@ -3,9 +3,10 @@
 
 ## Objective
 
-A simple todo app with Reactjs 
+A basic todo app with Reactjs 
 
 ## Demo
+LINK to App: https://kristen149.github.io/todo-app/ 
 
 ![image](https://github.com/kristen149/todo-app/assets/100759917/958a631b-d755-423b-8662-d51ca0f587c8)
 
