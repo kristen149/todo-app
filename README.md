@@ -1,4 +1,4 @@
-# Todo App with Reactjs (on progress...)
+# Todo App with Reactjs
 
 
 ## Objective
@@ -10,8 +10,8 @@ A simple todo app with Reactjs
 
 ## Features
 
-**---Add, Delete, Sort Todo** </br>
-**---Completed Tasks Check**
+**---CRUD, Sort Todo** </br>
+**---Completed Tasks Checking**
 
 ## Getting Started
 
