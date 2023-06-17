@@ -6,7 +6,7 @@
 A basic todo app with Reactjs 
 
 ## Demo
-LINK to App: https://kristen149.github.io/todo-app/ 
+<strong>LINK<strong/> to App: https://kristen149.github.io/todo-app/ 
 
 ![image](https://github.com/kristen149/todo-app/assets/100759917/22d85467-e886-47ee-9bce-97894d8b6910)
 
