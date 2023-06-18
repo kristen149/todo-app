@@ -1,6 +1,12 @@
 export const DisplayUncompleted = (props) => {
 
-    const { todolist, deleteTodo, moveTodo, editTodo, editItemName, setEditItemName } = props;
+    const { todolist, 
+        deleteTodo, 
+        moveTodo, 
+        editTodo, 
+        editItemName, 
+        setEditItemName,
+        handleKeyPress } = props;
 
     return (
         todolist.map((item) => {
@@ -26,6 +32,7 @@ export const DisplayUncompleted = (props) => {
                             className="fade-in"
                             value={editItemName}
                             onChange={e => setEditItemName(e.target.value)}
+                            onKeyDown={e => handleKeyPress(e, item.id, e.target.value)}
                         />
 
                     ) :

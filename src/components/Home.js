@@ -124,7 +124,12 @@ const Home = () => {
     }
 
     // EDIT TODO============================================================
-   
+
+    const handleKeyPress = (e, id, newName) => {
+        if (e.key ==='Enter') {
+            editTodo(id, newName)
+        }
+    }
 
     const editTodo = (id, newName) => {
 
@@ -139,13 +144,11 @@ const Home = () => {
         })
         setTodolist(updatedToDoList)
         setEditItemName("")
-
-
-
     }
+
     // INFO
     const handleClickInfo = () => {
-        alert('Version 1.2, Kristen T')
+        alert('Version 1.3, Kristen T')
     }
 
 
@@ -218,6 +221,7 @@ const Home = () => {
                                     editTodo={editTodo}
                                     editItemName={editItemName}
                                     setEditItemName={setEditItemName}
+                                    handleKeyPress= {handleKeyPress}
 
                                 />
 
