@@ -14,7 +14,7 @@ A basic todo app with Reactjs
 
 ## Features
 
-**---CRUD, Sort Todo** </br>
+**---Create, Delete, Update, Sort Todo** </br>
 **---Completed Tasks Checking**
 
 ## Getting Started
