@@ -11,6 +11,10 @@ export const DisplayUncompleted = (props) => {
                         <button className="remove" onClick={() => deleteTodo(item.id, true)} >
                             <i className="fa fa-trash-alt"></i>
                         </button>
+                        {/* TEMPORARY SOLUTION */}
+                        <button className="search" >
+                            <i className="fa fa-search"></i>
+                        </button>
                     </div>
 
 
@@ -37,8 +41,6 @@ export const DisplayUncompleted = (props) => {
                         <button className="edit" onClick={() => editTodo(item.id, editItemName)} >
                             <i class="fas fa-edit"></i>
                         </button>
-
-
 
                         <button className="complete" >
                             <i className="fa fa-check-circle" onClick={() => moveTodo(item.id)}></i>

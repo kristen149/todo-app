@@ -16,7 +16,6 @@ const Home = () => {
     const [todolist, setTodolist] = useState(JSON.parse(localStorage.getItem('todolist')) || [])
     const [completedlist, setCompletedlist] = useState(JSON.parse(localStorage.getItem('completedlist')) || [])
     const [on, setToggle] = useState(false)
-    // const [edit, setEdit] = useState(false)
     const [editItemName, setEditItemName] = useState("")
   
     // =======================================
@@ -63,7 +62,7 @@ const Home = () => {
         } else {
             let listTodoARR__delete = _.clone(completedlist)
             listTodoARR__delete = listTodoARR__delete.filter((item) => item.id !== id)
-            //  REMEMBER TO SET STATE AGAIN!
+            //  REMEMBER TO SET STATE AGAIN
             setCompletedlist(listTodoARR__delete)
         }
 
@@ -136,7 +135,7 @@ const Home = () => {
                 return item
 
             }
-            //return item.id === id? updatedToDoList : item
+            // OR: return item.id === id? updatedToDoList : item
         })
         setTodolist(updatedToDoList)
         setEditItemName("")

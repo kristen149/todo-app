@@ -359,6 +359,10 @@ ul.todo li .buttons button {
 ul.todo li .buttons .remove {
   color: #aaa;
 }
+ul.todo li .buttons .search {
+  color:#FFF;
+  cursor:default;
+}
 
 ul.todo li .buttons .remove:hover {
   color: #FA396B;
