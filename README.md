@@ -3,11 +3,12 @@
 
 ## Objective
 
-A simple todo app with Reactjs 
+A basic todo app with Reactjs 
 
 ## Demo
+<strong>LINK<strong/> to App: https://kristen149.github.io/todo-app/ 
 
-![image](https://github.com/kristen149/todo-app/assets/100759917/958a631b-d755-423b-8662-d51ca0f587c8)
+![image](https://github.com/kristen149/todo-app/assets/100759917/22d85467-e886-47ee-9bce-97894d8b6910)
 
  
 
@@ -18,7 +19,7 @@ A simple todo app with Reactjs
 
 ## Getting Started
 
- Clone this repository - `git clone` https://github.com/kristen149/todo-app.git <br/>
+ Clone this repository - `git clone https://github.com/kristen149/todo-app.git` <br/>
  You will need `node.js` and `git` installed in your PC/laptop
 
 ## Installation
