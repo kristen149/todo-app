@@ -51,7 +51,6 @@ const Home = () => {
     }
 
 
-
     // DELETE ITEM====================================================
     const deleteTodo = (id, fromSource) => {
 
@@ -67,8 +66,6 @@ const Home = () => {
             //  REMEMBER TO SET STATE AGAIN!
             setCompletedlist(listTodoARR__delete)
         }
-
-
 
     }
 
@@ -164,10 +161,10 @@ const Home = () => {
 
             <div className="card__body">
                 <div className="filter-btn">
-                    <a id="one" href="facebook.com" onClick={toggleCompletedlist}><i className="fa fa-check-circle"></i></a>
-                    <a id="two" href="facebook.com" onClick={() => sortListASC(false)}><i className="fa fa-sort-alpha-down"></i></a>
-                    <a id="three" href="facebook.com" onClick={() => sortListASC(true)}><i className="fa fa-sort-alpha-up"></i></a>
-                    <a id="all" href="facebook.com" onClick={() => handleClickInfo()}><i class="fa-solid fa-circle-info"></i></a>
+                    <a id="one" href="#" onClick={toggleCompletedlist}><i className="fa fa-check-circle"></i></a>
+                    <a id="two" href="#" onClick={() => sortListASC(false)}><i className="fa fa-sort-alpha-down"></i></a>
+                    <a id="three" href="#" onClick={() => sortListASC(true)}><i className="fa fa-sort-alpha-up"></i></a>
+                    <a id="all" href="#" onClick={() => handleClickInfo()}><i class="fa-solid fa-circle-info"></i></a>
                     <span className="toggle-btn">
                         <i className="fa fa-filter"></i>
                         <i className="fa fa-times"></i>

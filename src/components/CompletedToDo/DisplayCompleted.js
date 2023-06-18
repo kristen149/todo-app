@@ -3,7 +3,7 @@ export const DisplayCompleted = (props) => {
     const { completedlist, deleteTodo, moveTodo } = props;
 
     return (
-        completedlist.map((item, index) => {
+        completedlist.map((item) => {
 
             return (
                 <li>
