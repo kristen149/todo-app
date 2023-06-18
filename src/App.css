@@ -345,14 +345,16 @@ ul.todo#completed:after {
 
 ul.todo li .buttons button {
   background: none;
-  border: 0px;
+  border: none;
   box-shadow: none;
   outline: none;
   cursor: pointer;
   position: relative;
   padding: 5px 0 5px 5px;
   font-size: 1rem;
+
 }
+
 
 ul.todo li .buttons .remove {
   color: #aaa;
@@ -368,6 +370,14 @@ ul.todo li .buttons .complete {
 }
 
 ul.todo li .buttons .complete:hover {
+  color: #25b99a;
+}
+
+ul.todo li .buttons .edit {
+  color: #aaa;
+
+}
+ul.todo li .buttons .edit:hover {
   color: #25b99a;
 }
 

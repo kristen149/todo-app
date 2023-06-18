@@ -16,8 +16,9 @@ const Home = () => {
     const [todolist, setTodolist] = useState(JSON.parse(localStorage.getItem('todolist')) || [])
     const [completedlist, setCompletedlist] = useState(JSON.parse(localStorage.getItem('completedlist')) || [])
     const [on, setToggle] = useState(false)
-    const [edit, setEdit] = useState(true)
+    // const [edit, setEdit] = useState(false)
     const [editItemName, setEditItemName] = useState("")
+  
     // =======================================
     useEffect(() => {
         localStorage.setItem('todolist', JSON.stringify(todolist))
@@ -39,7 +40,7 @@ const Home = () => {
         setToggle(!on)
         if (todo !== "") {
             let newtodoItem = {
-                id: nextId, name: todo
+                id: nextId, name: todo, isEditing: false
             }
 
             setTodolist([...todolist, newtodoItem]);
@@ -96,7 +97,6 @@ const Home = () => {
 
                 // Add the item to the destination array
                 const updatedToDoList = [...todolist, itemToSwitchCompleted]
-                console.log(updatedToDoList)
                 setTodolist(updatedToDoList)
             }
 
@@ -128,32 +128,28 @@ const Home = () => {
     }
 
     // EDIT TODO============================================================
-    const handleKeyPress = (id, e) => {
-        if (e.key==='enter') {
-            editTodo(id, editItemName)
-        }
+   
 
-    }
     const editTodo = (id, newName) => {
-        setEdit(!edit)
-        
+
         const updatedToDoList = todolist.map((item) => {
-            if (item.id===id) {
-                return {...item, name:newName}
+            if (item.id === id) {
+                return { ...item, name: newName, isEditing: !item.isEditing }
+            } else {
+                return item
+
             }
-            console.log(item)
-            return item
+            //return item.id === id? updatedToDoList : item
         })
         setTodolist(updatedToDoList)
-        setEditItemName('')
-        console.log(updatedToDoList)
-        
+        setEditItemName("")
+
 
 
     }
     // INFO
     const handleClickInfo = () => {
-        alert('Version 1.1, Kristen T')
+        alert('Version 1.2, Kristen T')
     }
 
 
@@ -168,10 +164,10 @@ const Home = () => {
 
             <div className="card__body">
                 <div className="filter-btn">
-                    <a id="one"  onClick={toggleCompletedlist}><i className="fa fa-check-circle"></i></a>
-                    <a id="two"  onClick={() => sortListASC(false)}><i className="fa fa-sort-alpha-down"></i></a>
-                    <a id="three" onClick={() => sortListASC(true)}><i className="fa fa-sort-alpha-up"></i></a>
-                    <a id="all" onClick= {() => handleClickInfo()}><i class="fa-solid fa-circle-info"></i></a>
+                    <a id="one" href="facebook.com" onClick={toggleCompletedlist}><i className="fa fa-check-circle"></i></a>
+                    <a id="two" href="facebook.com" onClick={() => sortListASC(false)}><i className="fa fa-sort-alpha-down"></i></a>
+                    <a id="three" href="facebook.com" onClick={() => sortListASC(true)}><i className="fa fa-sort-alpha-up"></i></a>
+                    <a id="all" href="facebook.com" onClick={() => handleClickInfo()}><i class="fa-solid fa-circle-info"></i></a>
                     <span className="toggle-btn">
                         <i className="fa fa-filter"></i>
                         <i className="fa fa-times"></i>
@@ -223,19 +219,15 @@ const Home = () => {
                                     todolist={todolist}
                                     deleteTodo={deleteTodo}
                                     moveTodo={moveTodo}
-                                    edit = {edit}
                                     editTodo={editTodo}
-                                    editItemName= {editItemName}
+                                    editItemName={editItemName}
                                     setEditItemName={setEditItemName}
-                                    handleKeyPress = {handleKeyPress}
 
                                 />
 
                             </ul>
                         )}
                         {/* Completed tasks */}
-
-
                         <ul className="todo scale-in" id="completed">
                             <DisplayCompleted
                                 completedlist={completedlist}
